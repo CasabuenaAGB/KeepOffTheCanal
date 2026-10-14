@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b3uliufl561xc"]
+
+[ext_resource type="Texture2D" uid="uid://c3s0d2h8ic11p" path="res://Graphics/Grass.png" id="1_lw031"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2o6t"]
+radius = 34.0147
+
+[node name="Grass" type="Area2D" unique_id=1870058822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=143419182]
+shape = SubResource("CircleShape2D_e2o6t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1417372251]
+scale = Vector2(0.8385416, 0.875)
+texture = ExtResource("1_lw031")

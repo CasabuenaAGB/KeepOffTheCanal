@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://ddphxjn5pgdyx"]
+
+[ext_resource type="Script" uid="uid://bnjkuisch2ajn" path="res://Game.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://5p1nd73wef64" path="res://Graphics/Map.png" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b3uliufl561xc" path="res://Scenes/Patch.tscn" id="3_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://c0ayducqfryvf" path="res://Graphics/Volunteer_CLeaner.png" id="3_feb5d"]
+
+[sub_resource type="Curve2D" id="Curve2D_e2o6t"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -5, 174, 0, 0, 0, 0, 357, 173, 0, 0, 0, 0, 361, 442, 0, 0, 0, 0, 674, 443, 0, 0, 0, 0, 676, 273, 0, 0, 0, 0, 991, 272)
+}
+point_count = 6
+
+[node name="Game" type="Node2D" unique_id=991210900]
+script = ExtResource("1_80nbo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2005828832]
+light_mask = 3
+position = Vector2(575, 323)
+texture = ExtResource("2_fc0e3")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1829661129]
+curve = SubResource("Curve2D_e2o6t")
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=1884343150]
+one_shot = true
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=648166240]
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1332027681]
+
+[node name="TextureButton" type="TextureButton" parent="GUI" unique_id=891160194]
+offset_left = 1062.0
+offset_top = 554.0
+offset_right = 1126.0
+offset_bottom = 618.0
+texture_normal = ExtResource("3_feb5d")
+
+[node name="Label" type="Label" parent="GUI" unique_id=1059129134]
+offset_right = 102.0
+offset_bottom = 44.0
+
+[node name="Grass" parent="." unique_id=1870058822 instance=ExtResource("3_fc0e3")]
+position = Vector2(433, 376)
+
+[node name="Grass2" parent="." unique_id=909170464 instance=ExtResource("3_fc0e3")]
+position = Vector2(607, 379)
+
+[node name="Grass3" parent="." unique_id=892886065 instance=ExtResource("3_fc0e3")]
+position = Vector2(286, 242)
+
+[node name="Grass4" parent="." unique_id=308938595 instance=ExtResource("3_fc0e3")]
+position = Vector2(744, 344)
+
+[node name="Grass5" parent="." unique_id=693915937 instance=ExtResource("3_fc0e3")]
+position = Vector2(81, 101)
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="pressed" from="GUI/TextureButton" to="." method="_on_texture_button_pressed"]
