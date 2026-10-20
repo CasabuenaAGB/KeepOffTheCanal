@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cowjskkvawva4"]
+
+[ext_resource type="Script" uid="uid://4tmn85gv75si" path="res://Scenes/win_screen.gd" id="1_l5sol"]
+
+[node name="Win Screen" type="Control" unique_id=1545784633]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5sol")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=942092435]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 649.0
+color = Color(0.1764706, 0.77254903, 0.46666667, 1)
+
+[node name="Restart" type="MenuButton" parent="." unique_id=682537862]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 366.0
+offset_right = 689.0
+offset_bottom = 419.0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="Main Menu" type="MenuButton" parent="." unique_id=756890995]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 430.0
+offset_right = 784.0
+offset_bottom = 483.0
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+
+[node name="Quit" type="MenuButton" parent="." unique_id=1529106429]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 500.0
+offset_right = 709.0
+offset_bottom = 553.0
+theme_override_font_sizes/font_size = 32
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=1233969908]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 178.0
+offset_right = 1007.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 40
+text = "You won! You kept the River clean! Good job!"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

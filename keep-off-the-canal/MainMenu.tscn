@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://31au8x62r3sg"]
+
+[ext_resource type="Script" uid="uid://xigae6d6pikr" path="res://GD/MainMenu.gd" id="1_eiy7p"]
+[ext_resource type="Texture2D" uid="uid://dkgifig6w2g5u" path="res://Graphics/Maain Menu.png" id="2_h7a2f"]
+
+[node name="Main Menu" type="Control" unique_id=1558906563]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eiy7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=286173896]
+position = Vector2(573, 324)
+texture = ExtResource("2_h7a2f")
+
+[node name="Play Game" type="MenuButton" parent="." unique_id=1404946304]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 322.0
+offset_right = 282.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(0.8745098, 0.45490196, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Play Game"
+
+[node name="Exit" type="MenuButton" parent="." unique_id=359806693]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 379.0
+offset_right = 170.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0.8745098, 0.45490196, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Exit"
+
+[connection signal="pressed" from="Play Game" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://c8vfyxu08oiyi"]
+
+[ext_resource type="Texture2D" uid="uid://kpxeeq5c2b0" path="res://Graphics/Hired_CLeaner.png" id="1_8vvp0"]
+[ext_resource type="Script" uid="uid://bo2kllfg4wkc5" path="res://GD/Cleaner/cleaner_2.gd" id="1_b2tu0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 93.08598
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(44, 42)
+
+[node name="Cleaner2" type="Node2D" unique_id=931752788]
+script = ExtResource("1_b2tu0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=851569314]
+
+[node name="CleanerHead" type="Sprite2D" parent="." unique_id=943930017]
+texture = ExtResource("1_8vvp0")
+
+[node name="Range" type="Area2D" parent="." unique_id=878365828]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range" unique_id=1582204788]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Placement" type="Area2D" parent="." unique_id=1260118546]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placement" unique_id=535471820]
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="GrabTimer" type="Timer" parent="." unique_id=1675246940]
+
+[connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
+[connection signal="area_entered" from="Placement" to="." method="_on_placement_area_entered"]
+[connection signal="timeout" from="GrabTimer" to="." method="_on_grab_timer_timeout"]

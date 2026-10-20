@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dsps2yweqvpae"]
+
+[ext_resource type="Script" uid="uid://rmlc7emv5pbf" path="res://GD/resi_trash.gd" id="1_0llpf"]
+[ext_resource type="Texture2D" uid="uid://djyu118ppa6a7" path="res://Graphics/Residual_Trash.png" id="2_36ycc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(65, 60)
+
+[node name="ResiTrash" type="PathFollow2D" unique_id=1261451461]
+script = ExtResource("1_0llpf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=570499923]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=261961191]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=28531036]
+texture = ExtResource("2_36ycc")

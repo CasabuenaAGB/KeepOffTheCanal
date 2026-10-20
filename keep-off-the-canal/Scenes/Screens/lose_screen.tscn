@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://konph6ht82v2"]
+
+[ext_resource type="Script" uid="uid://cvnkfogvl1xby" path="res://GD/lose_screen.gd" id="1_s2rrh"]
+
+[node name="Lose Screen" type="Control" unique_id=545011061]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2rrh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1537597531]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 650.0
+color = Color(1, 0.33333334, 0.1764706, 1)
+
+[node name="Label" type="Label" parent="." unique_id=487452836]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 136.0
+offset_right = 947.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 40
+text = "You lost! The River is no longer clean!"
+
+[node name="Restart" type="MenuButton" parent="." unique_id=788724109]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 337.0
+offset_right = 670.0
+offset_bottom = 390.0
+theme_override_font_sizes/font_size = 32
+text = "RESTART?"
+
+[node name="Quit" type="MenuButton" parent="." unique_id=2134771803]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 457.0
+offset_right = 630.0
+offset_bottom = 510.0
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="Main Menu" type="MenuButton" parent="." unique_id=628316266]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 394.0
+offset_right = 690.0
+offset_bottom = 454.0
+theme_override_font_sizes/font_size = 32
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Restart" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_menu_button_2_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_menu_button_3_pressed"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c64cpjch7f6p2"]
+
+[ext_resource type="Script" uid="uid://dsom3k7wmcmyf" path="res://GD/rec_trash.gd" id="1_c4cdr"]
+[ext_resource type="Texture2D" uid="uid://7pc86hrh8ne3" path="res://Graphics/Recyclable_Trash.png" id="2_ticla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(44, 43)
+
+[node name="RecTrash" type="PathFollow2D" unique_id=1852181468]
+script = ExtResource("1_c4cdr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1798363053 groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1292765889 groups=["Enemy"]]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=895600426 groups=["Enemy"]]
+position = Vector2(0, -0.50000054)
+scale = Vector2(0.6875, 0.67187494)
+texture = ExtResource("2_ticla")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

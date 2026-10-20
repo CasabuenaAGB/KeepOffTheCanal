@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cg6tfb6noaiew"]
+
+[ext_resource type="Script" uid="uid://dn6kd7k5l1sdd" path="res://GD/Cleaner/grabber.gd" id="1_deecm"]
+[ext_resource type="Texture2D" uid="uid://lqqpunfpeosn" path="res://Graphics/Grabber.png" id="1_tds7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(13, 6)
+
+[node name="Area2D" type="Area2D" unique_id=1273206108]
+script = ExtResource("1_deecm")
+
+[node name="GrabberSprite" type="Sprite2D" parent="." unique_id=678305038]
+texture = ExtResource("1_tds7x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1630179282]
+position = Vector2(19, -10)
+rect = Rect2(-3, 3, 13, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=113181308]
+position = Vector2(22, -3)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
